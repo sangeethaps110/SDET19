@@ -10,7 +10,7 @@ import com.objectrepo.HomePage;
 import com.objectrepo.SalesOrderPage;
 
 public class TC_43 extends Baseclass {
-	@Test
+	@Test(groups= {"smoke test","regression test"})
 	public void SearchInSubject() throws IOException
 	{	HomePage hp=new HomePage(driver);
 		WebDriver_Utility util=new WebDriver_Utility();
@@ -40,6 +40,6 @@ public class TC_43 extends Baseclass {
 	hp.LogoutMethod(driver);
 	} */
 
-	}  
-
+	}   
+ 
 

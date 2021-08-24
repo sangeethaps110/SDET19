@@ -8,7 +8,7 @@ import com.generic.AutoConstants;
 import com.objectrepo.SalesOrderPage;
 
 public class TC_42 extends Baseclass {
-@Test
+@Test (groups="smoke test")
 public void SearchinSalesOrderNo() throws IOException
 {
 	SalesOrderPage sop=new SalesOrderPage(driver);

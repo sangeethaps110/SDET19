@@ -22,20 +22,23 @@ public class Baseclass {
 	Readfrompropfile rp = new	Readfrompropfile();
 	WebDriver_Utility util=new WebDriver_Utility();
 	
-	@Parameters("BROWSER")
-	@BeforeClass
-	//public void LaunchBrowser() throws IOException
-	public void LaunchBrowser(String BROWSER) throws IOException
+	//@Parameters("BROWSER")
+	@BeforeClass(groups= {"smoke test","regression test"})
+	public void LaunchBrowser() throws IOException
+//	public void LaunchBrowser(String BROWSER) throws IOException
 	{
-		//if((rp.readfrompropfile(AutoConstants.PropertiesFilePath,"browser").equalsIgnoreCase("chrome")))
-		if(BROWSER.equalsIgnoreCase("chrome"))
+	if((rp.readfrompropfile(AutoConstants.PropertiesFilePath,"browser").equalsIgnoreCase("chrome")))
+	//	String browser=System.getProperty("browser");
+		// (browser.equalsIgnoreCase("chrome"))
+		
 		{
 			driver=new ChromeDriver();
 		} 
-		if(BROWSER.equalsIgnoreCase("chrome"))
-		//else if(rp.readfrompropfile(AutoConstants.PropertiesFilePath,"browser").equalsIgnoreCase("chrome"))
+		//if(BROWSER.equalsIgnoreCase("chrome"))
+		else if(rp.readfrompropfile(AutoConstants.PropertiesFilePath,"browser").equalsIgnoreCase("chrome"))
+		//else if(browser.equalsIgnoreCase("firefox"))
 		{
-			driver=new FirefoxDriver();
+			driver=new FirefoxDriver(); 
 		}
 		else
 		{
@@ -47,20 +50,20 @@ public class Baseclass {
 		util.waitForPageLoad(driver);
 
 	}
-	@BeforeMethod
+	@BeforeMethod(groups= {"smoke test","regression test"})
 	public void Login() throws IOException 
 	{
 		LoginPage lp=new LoginPage(driver);
 		lp.LoginMethod(driver, rp.readfrompropfile(AutoConstants.PropertiesFilePath, "url"), rp.readfrompropfile(AutoConstants.PropertiesFilePath, "username") ,  rp.readfrompropfile(AutoConstants.PropertiesFilePath, "password"));
 
 	}
-	@AfterMethod
+	@AfterMethod(groups= {"smoke test","regression test"})
 	public void Logout()
 	{
 		HomePage hp=new HomePage(driver);
 		hp.LogoutMethod(driver);
 	}
-	@AfterClass
+	@AfterClass(groups= {"smoke test","regression test"})
 	public void CloseBrowser()
 	{
 		driver.quit();

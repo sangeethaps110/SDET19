@@ -17,7 +17,7 @@ public class SalesOrderPage {
 	}
 	
 	@FindBy(xpath="//img[@src='themes/softed/images/btnL3Add.gif']")
-	private WebElement CreateSalesOrderIcon;
+	private WebElement CreateSalesOrderIcon; 
 
 	public WebElement getCreateSalesOrderIcon() {
 		return CreateSalesOrderIcon;

@@ -2,16 +2,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
     <classes>
       <class name="com.Testcases.TC_43">
         <methods>
           <include name="SearchInSubject"/>
-          <include name="CloseBrowser"/>
-          <include name="Login"/>
-          <include name="Logout"/>
-          <include name="LaunchBrowser"/>
         </methods>
       </class> <!-- com.Testcases.TC_43 -->
+      <class name="com.Testcases.TC_42">
+        <methods>
+          <include name="SearchinSalesOrderNo"/>
+        </methods>
+      </class> <!-- com.Testcases.TC_42 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
