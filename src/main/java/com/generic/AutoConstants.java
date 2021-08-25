@@ -1,8 +1,9 @@
 package com.generic;
 
 public interface AutoConstants {
+	public static String DirPath=System.getProperty("user.dir");
 String XMLfilePath="../SDET19/src/test/resources/datafiles/xmlfile.xml";
-String PropertiesFilePath="../SDET19/src/test/resources/datafiles/commonutils.properties";
+String PropertiesFilePath=DirPath+"/src/test/resources/datafiles/commonutils.properties";
 String excelSheetPath="./src/test/resources/datafiles/testdata.xlsx";
 String SalesOrderModuleTestDataPropFile="../SDET19/src/test/resources/datafiles/SalesOrdermoduleTestdata.properties";
 int implicitWait=20;
