@@ -9,4 +9,5 @@ String SalesOrderModuleTestDataPropFile="../SDET19/src/test/resources/datafiles/
 int implicitWait=20;
 int explicitWait=20;
 int pageLoadWait=30;
+//jde
 }
