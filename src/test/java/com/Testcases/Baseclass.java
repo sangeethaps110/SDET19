@@ -33,7 +33,8 @@ public class Baseclass {
 		
 		{
 			driver=new ChromeDriver();
-		} 
+		}
+	//kk
 		//if(BROWSER.equalsIgnoreCase("chrome"))
 		else if(rp.readfrompropfile(AutoConstants.PropertiesFilePath,"browser").equalsIgnoreCase("chrome"))
 		//else if(browser.equalsIgnoreCase("firefox"))
