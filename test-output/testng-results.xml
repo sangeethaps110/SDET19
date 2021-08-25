@@ -1,39 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="21502" started-at="2021-08-23T11:05:13Z" finished-at="2021-08-23T11:05:34Z">
+  <suite name="Suite1" duration-ms="23195" started-at="2021-08-25T17:40:24Z" finished-at="2021-08-25T17:40:47Z">
     <groups>
-      <group name="smoke test">
-        <method signature="TC_43.SearchInSubject()[pri:0, instance:com.Testcases.TC_43@39c0f4a]" name="SearchInSubject" class="com.Testcases.TC_43"/>
-      </group> <!-- smoke test -->
-      <group name="regression test">
-        <method signature="TC_43.SearchInSubject()[pri:0, instance:com.Testcases.TC_43@39c0f4a]" name="SearchInSubject" class="com.Testcases.TC_43"/>
-      </group> <!-- regression test -->
+      <group name="practice">
+        <method signature="TC_44.SearchInOrganizationName()[pri:0, instance:com.Testcases.TC_44@42e26948]" name="SearchInOrganizationName" class="com.Testcases.TC_44"/>
+        <method signature="TC_45.SearchinQuotes()[pri:0, instance:com.Testcases.TC_45@1794d431]" name="SearchinQuotes" class="com.Testcases.TC_45"/>
+      </group> <!-- practice -->
     </groups>
-    <test name="Default test" duration-ms="21502" started-at="2021-08-23T11:05:13Z" finished-at="2021-08-23T11:05:34Z">
-      <class name="com.Testcases.TC_43">
-        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:com.Testcases.TC_43@39c0f4a]" name="LaunchBrowser" is-config="true" duration-ms="6052" started-at="2021-08-23T11:05:13Z" finished-at="2021-08-23T11:05:19Z">
+    <test name="Test" duration-ms="23195" started-at="2021-08-25T17:40:24Z" finished-at="2021-08-25T17:40:47Z">
+      <class name="com.Testcases.TC_45">
+        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:com.Testcases.TC_45@1794d431]" name="LaunchBrowser" is-config="true" duration-ms="3856" started-at="2021-08-25T17:40:24Z" finished-at="2021-08-25T17:40:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchBrowser -->
-        <test-method status="PASS" signature="Login()[pri:0, instance:com.Testcases.TC_43@39c0f4a]" name="Login" is-config="true" duration-ms="5380" started-at="2021-08-23T11:05:19Z" finished-at="2021-08-23T11:05:24Z">
+        <test-method status="PASS" signature="Login()[pri:0, instance:com.Testcases.TC_45@1794d431]" name="Login" is-config="true" duration-ms="7386" started-at="2021-08-25T17:40:28Z" finished-at="2021-08-25T17:40:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method status="PASS" signature="SearchInSubject()[pri:0, instance:com.Testcases.TC_43@39c0f4a]" name="SearchInSubject" duration-ms="6434" started-at="2021-08-23T11:05:24Z" finished-at="2021-08-23T11:05:30Z">
+        <test-method status="PASS" signature="SearchinQuotes()[pri:0, instance:com.Testcases.TC_45@1794d431]" name="SearchinQuotes" duration-ms="8505" started-at="2021-08-25T17:40:35Z" finished-at="2021-08-25T17:40:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchInSubject -->
-        <test-method status="PASS" signature="Logout()[pri:0, instance:com.Testcases.TC_43@39c0f4a]" name="Logout" is-config="true" duration-ms="2061" started-at="2021-08-23T11:05:30Z" finished-at="2021-08-23T11:05:32Z">
+        </test-method> <!-- SearchinQuotes -->
+        <test-method status="PASS" signature="Logout()[pri:0, instance:com.Testcases.TC_45@1794d431]" name="Logout" is-config="true" duration-ms="2267" started-at="2021-08-25T17:40:44Z" finished-at="2021-08-25T17:40:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Logout -->
-        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:com.Testcases.TC_43@39c0f4a]" name="CloseBrowser" is-config="true" duration-ms="1544" started-at="2021-08-23T11:05:32Z" finished-at="2021-08-23T11:05:34Z">
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:com.Testcases.TC_45@1794d431]" name="CloseBrowser" is-config="true" duration-ms="1151" started-at="2021-08-25T17:40:46Z" finished-at="2021-08-25T17:40:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseBrowser -->
-      </class> <!-- com.Testcases.TC_43 -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.Testcases.TC_45 -->
+      <class name="com.Testcases.TC_44">
+        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:com.Testcases.TC_44@42e26948]" name="LaunchBrowser" is-config="true" duration-ms="3792" started-at="2021-08-25T17:40:24Z" finished-at="2021-08-25T17:40:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchBrowser -->
+        <test-method status="PASS" signature="Login()[pri:0, instance:com.Testcases.TC_44@42e26948]" name="Login" is-config="true" duration-ms="7134" started-at="2021-08-25T17:40:28Z" finished-at="2021-08-25T17:40:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="SearchInOrganizationName()[pri:0, instance:com.Testcases.TC_44@42e26948]" name="SearchInOrganizationName" duration-ms="8911" started-at="2021-08-25T17:40:35Z" finished-at="2021-08-25T17:40:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchInOrganizationName -->
+        <test-method status="PASS" signature="Logout()[pri:0, instance:com.Testcases.TC_44@42e26948]" name="Logout" is-config="true" duration-ms="2139" started-at="2021-08-25T17:40:44Z" finished-at="2021-08-25T17:40:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:com.Testcases.TC_44@42e26948]" name="CloseBrowser" is-config="true" duration-ms="1192" started-at="2021-08-25T17:40:46Z" finished-at="2021-08-25T17:40:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- com.Testcases.TC_44 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite1 -->
 </testng-results>

@@ -9,7 +9,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 
 import com.generic.AutoConstants;
 import com.generic.Readfrompropfile;
@@ -17,13 +16,19 @@ import com.generic.WebDriver_Utility;
 import com.objectrepo.HomePage;
 import com.objectrepo.LoginPage;
 
+/*import com.generic.AutoConstants;
+import com.generic.Readfrompropfile;
+import com.generic.WebDriver_Utility;
+import com.objectrepo.HomePage;
+import com.objectrepo.LoginPage; */
+
 public class Baseclass {
 	protected WebDriver driver;
 	Readfrompropfile rp = new	Readfrompropfile();
 	WebDriver_Utility util=new WebDriver_Utility();
 	
 	//@Parameters("BROWSER")
-	@BeforeClass(groups= {"smoke test","regression test"})
+	@BeforeClass(groups= {"smoke test","regression test","practice"})
 	public void LaunchBrowser() throws IOException
 //	public void LaunchBrowser(String BROWSER) throws IOException
 	{
@@ -34,7 +39,7 @@ public class Baseclass {
 		{
 			driver=new ChromeDriver();
 		}
-	//kk
+	//kk 
 		//if(BROWSER.equalsIgnoreCase("chrome"))
 		else if(rp.readfrompropfile(AutoConstants.PropertiesFilePath,"browser").equalsIgnoreCase("chrome"))
 		//else if(browser.equalsIgnoreCase("firefox"))
@@ -51,20 +56,20 @@ public class Baseclass {
 		util.waitForPageLoad(driver);
 
 	}
-	@BeforeMethod(groups= {"smoke test","regression test"})
+	@BeforeMethod(groups= {"smoke test","regression test","practice"})
 	public void Login() throws IOException 
 	{
 		LoginPage lp=new LoginPage(driver);
 		lp.LoginMethod(driver, rp.readfrompropfile(AutoConstants.PropertiesFilePath, "url"), rp.readfrompropfile(AutoConstants.PropertiesFilePath, "username") ,  rp.readfrompropfile(AutoConstants.PropertiesFilePath, "password"));
 
 	}
-	@AfterMethod(groups= {"smoke test","regression test"})
+	@AfterMethod(groups= {"smoke test","regression test","practice"})
 	public void Logout()
 	{
 		HomePage hp=new HomePage(driver);
 		hp.LogoutMethod(driver);
 	}
-	@AfterClass(groups= {"smoke test","regression test"})
+	@AfterClass(groups= {"smoke test","regression test","practice"})
 	public void CloseBrowser()
 	{
 		driver.quit();

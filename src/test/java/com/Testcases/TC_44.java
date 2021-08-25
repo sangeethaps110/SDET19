@@ -2,13 +2,15 @@ package com.Testcases;
 
 import java.io.IOException;
 
+import org.testng.annotations.Test;
+
 import com.generic.AutoConstants;
 import com.generic.WebDriver_Utility;
 import com.objectrepo.HomePage;
 import com.objectrepo.SalesOrderPage;
 
 public class TC_44 extends Baseclass {
-
+@Test(groups="practice")
 	public void SearchInOrganizationName() throws IOException
 	{
 		HomePage hp=new HomePage(driver);
