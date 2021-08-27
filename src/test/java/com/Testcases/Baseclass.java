@@ -1,7 +1,11 @@
 package com.Testcases;
 
+import java.io.File;
 import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -23,7 +27,8 @@ import com.objectrepo.HomePage;
 import com.objectrepo.LoginPage; */
 
 public class Baseclass {
-	protected WebDriver driver;
+	protected  WebDriver driver;
+public	static WebDriver staticdriver;
 	Readfrompropfile rp = new	Readfrompropfile();
 	WebDriver_Utility util=new WebDriver_Utility();
 	
@@ -54,6 +59,7 @@ public class Baseclass {
 		driver.manage().window().maximize();
 		util.waitImplicitly(driver);
 		util.waitForPageLoad(driver);
+		staticdriver=driver;
 
 	}
 	@BeforeMethod(groups= {"smoke test","regression test","practice"})
@@ -74,4 +80,13 @@ public class Baseclass {
 	{
 		driver.quit();
 	}
+	public static String getScreenshot(String name) throws IOException
+	{
+		File srcfile=((TakesScreenshot)staticdriver).getScreenshotAs(OutputType.FILE);
+		String destfile=System.getProperty("user.dir")+"/Screenshots/"+ name +" .png";
+		File finaldest=new File(destfile);
+		FileUtils.copyFile(srcfile, finaldest);
+		return destfile;
+	}
+	
 }

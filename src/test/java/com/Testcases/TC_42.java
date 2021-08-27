@@ -7,12 +7,15 @@ import org.testng.annotations.Test;
 import com.generic.AutoConstants;	
 import com.objectrepo.SalesOrderPage;
 
+import junit.framework.Assert;
+
 public class TC_42 extends Baseclass {
 @Test (groups="smoke test")
 public void SearchinSalesOrderNo() throws IOException
 {
 	SalesOrderPage sop=new SalesOrderPage(driver);
 	sop.SearchSalesOrder(driver,AutoConstants.SalesOrderModuleTestDataPropFile, "TC_42Step4", "TC_42Step5" );
+	Assert.assertEquals(false, true);
 }
 	/* 
 	public static void main(String[] args) throws IOException {

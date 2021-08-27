@@ -1,17 +1,25 @@
 package vtiger;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
+import com.generic.AutoConstants;
 import com.generic.Generaterandomnumber;
 import com.generic.Readfrompropfile;
+import com.objectrepo.HomePage;
 
 public class Textfieldsoforgmodule {
-
-	public static void main(String[] args) throws IOException {
+	@Test
+public void Textfieldsoforgmodule() throws IOException, InterruptedException {
+//	public static void main(String[] args) throws IOException, InterruptedException {
 		// TODO Auto-generated method stub
 		WebDriver driver=new ChromeDriver();
 		driver.manage().window().maximize();
@@ -19,11 +27,11 @@ public class Textfieldsoforgmodule {
 		Readfrompropfile prop=new Readfrompropfile();
 		
 		
-		driver.get(prop.readfrompropfile("../SDET19/datafiles/commonutils.properties","url"));
+		driver.get(prop.readfrompropfile(AutoConstants.PropertiesFilePath,"url"));
 		
-		driver.findElement(By.name("user_name")).sendKeys(prop.readfrompropfile("../SDET19/datafiles/commonutils.properties","username"));
+		driver.findElement(By.name("user_name")).sendKeys("admin");
 		
-		driver.findElement(By.name("user_password")).sendKeys(prop.readfrompropfile("../SDET19/datafiles/commonutils.properties","password"));
+		driver.findElement(By.name("user_password")).sendKeys("admin");
 		driver.findElement(By.id("submitButton")).click();
 		driver.findElement(By.xpath("//a[text()='Organizations'][1]")).click();
 		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
@@ -44,12 +52,23 @@ public class Textfieldsoforgmodule {
 		driver.findElement(By.xpath("//input[@id='email2']")).sendKeys("vikram_hospital2@gmail.com");
 		driver.findElement(By.id("ownership")).sendKeys("multiples");
 		driver.findElement(By.id("siccode")).sendKeys("0552");
-		driver.findElement(By.xpath("//input[@name='annual_revenue']")).sendKeys("16cr");
+		//driver.findElement(By.xpath("//input[@name='annual_revenue']")).sendKeys("16cr");
 		driver.findElement(By.xpath("//textarea[@name='description']")).sendKeys("******");
 		driver.findElement(By.xpath("//input[@value='  Save  ']")).click();
-	}
+		Thread.sleep(2000);
+		String actualname=driver.findElement(By.xpath("//span[@id='dtlview_Organization Name']")).getText();
+	Assert.assertEquals(actualname, "jedjkb","'test is failed!!!!!!'");
+		//SoftAssert s=new SoftAssert();
+		//s.assertEquals(actualname, "vvv", "'testcase is fail'");
+		
+		//s.assertEquals(actualname, "jsbjs","failed");
+		HomePage hp=new HomePage(driver);
+		hp.LogoutMethod(driver);
+		//s.assertAll();
+}
+	} 
 
 
-	}
+	
 
 

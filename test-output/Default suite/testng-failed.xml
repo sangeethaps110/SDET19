@@ -3,15 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Testcases.TC_43">
+      <class name="vtiger.Textfieldsoforgmodule">
         <methods>
-          <include name="SearchInSubject"/>
-          <include name="CloseBrowser"/>
-          <include name="Login"/>
-          <include name="Logout"/>
-          <include name="LaunchBrowser"/>
+          <include name="Textfieldsoforgmodule"/>
         </methods>
-      </class> <!-- com.Testcases.TC_43 -->
+      </class> <!-- vtiger.Textfieldsoforgmodule -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
